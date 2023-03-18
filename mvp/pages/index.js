@@ -1,25 +1,8 @@
-/**
- * @license
- * Copyright 2022 Google LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import { EmailAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import { EmailAuthProvider, GoogleAuthProvider, FacebookAuthProvider } from 'firebase/auth';
 import { Button, CircularProgress, Container, Dialog, Typography } from '@mui/material';
 import { useAuth } from '../firebase/auth';
 import { auth } from '../firebase/firebase';
@@ -34,6 +17,7 @@ const uiConfig = {
   signInOptions: [
     EmailAuthProvider.PROVIDER_ID,
     GoogleAuthProvider.PROVIDER_ID,
+    FacebookAuthProvider.PROVIDER_ID
   ],
 };
 
